@@ -5,7 +5,7 @@ def projectFolderName = "${PROJECT_NAME}"
 // Variables
 def siteRepoName = "doa17-static-page"
 def siteRepoUrl = "ssh://jenkins@gerrit:29418/${PROJECT_NAME}/" + siteRepoName
-def doa17BucketName = "doa17-chuymarin-bucket"
+def doa17BucketName = "doa17-nestorrubio-bucket"
 
 // Views
 def doa17SitePipeline = buildPipelineView(projectFolderName + "/DOA17_S3_Site_Pipeline")
@@ -35,7 +35,7 @@ doa17PullCode.with{
   }
   parameters{
     stringParam("S3_BUCKET",doa17BucketName,"AWS S3 Bucket Name")
-    stringParam("AWS_REGION",'',"AWS Region")
+    stringParam("AWS_REGION",'us-east-1',"AWS Region")
   }
   wrappers {
     preBuildCleanup()
